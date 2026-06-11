@@ -39,6 +39,11 @@ jobs:
 
       - run: brew test-bot --only-setup
 
+      - name: Tap external formula dependencies
+        run: |
+          brew tap neurosnap/tap
+          brew trust --formula neurosnap/tap/zmx
+
       - run: brew test-bot --only-tap-syntax
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'

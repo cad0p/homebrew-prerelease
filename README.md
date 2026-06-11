@@ -1,18 +1,53 @@
-# Cad0p Prerelease
+# Cad0p Prerelease Tap
 
-## How do I install these formulae?
+Homebrew tap for prerelease `cad0p` formulae.
 
-`brew install cad0p/prerelease/<formula>`
+Stable formulae live in [`cad0p/homebrew-tap`](https://github.com/cad0p/homebrew-tap).
 
-Or `brew tap cad0p/prerelease` and then `brew install <formula>`.
+## Prerequisites
 
-Or, in a `brew bundle` `Brewfile`:
+`ghostty-zmx` depends on zmx from the upstream `neurosnap/tap` tap:
 
-```ruby
-tap "cad0p/prerelease"
-brew "<formula>"
+```sh
+brew tap neurosnap/tap
+```
+
+## Formulae
+
+### `ghostty-zmx`
+
+Prerelease builds of Ghostty + zmx session management integration. This formula tracks the project's prerelease channel and is intended for testing new changes before stable releases.
+
+Install directly:
+
+```sh
+brew install cad0p/prerelease/ghostty-zmx
+```
+
+After installation, configure your shell and Ghostty config by running:
+
+```sh
+ghostty-zmx-install
+```
+
+Then restart Ghostty or open a new Ghostty window.
+
+## Development
+
+Formula files live under `Formula/`:
+
+```text
+Formula/ghostty-zmx.rb
+```
+
+Before pushing formula changes, test locally:
+
+```sh
+brew install --build-from-source cad0p/prerelease/ghostty-zmx
+brew test cad0p/prerelease/ghostty-zmx
+brew audit --strict cad0p/prerelease/ghostty-zmx
 ```
 
 ## Documentation
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+`brew help`, `man brew`, or [Homebrew's documentation](https://docs.brew.sh).
