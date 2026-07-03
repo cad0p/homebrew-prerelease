@@ -1,8 +1,8 @@
 class GhosttyZmx < Formula
   desc "Ghostty + zmx session management integration (prerelease)"
   homepage "https://github.com/cad0p/ghostty-zmx"
-  url "https://github.com/cad0p/ghostty-zmx/archive/refs/tags/v0.1.4-20260703.3.tar.gz"
-  sha256 "a3013305622109e5a163264ee40e25776c87eb1cbd18e57a6b6574fd4b5aafcf"
+  url "https://github.com/cad0p/ghostty-zmx/archive/refs/tags/v0.1.4-20260703.4.tar.gz"
+  sha256 "e360fa352cf4823cd9fc6be962c142e046db4748628561a3471730501ab4b0f4"
   license "MIT"
 
   depends_on :macos
