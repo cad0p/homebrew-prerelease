@@ -25,11 +25,11 @@ class GhosttyZmx < Formula
 
   def caveats
     <<~EOS
-      ghostty-zmx installs helper wrappers but does not modify your shell or Ghostty config during brew install.
+      ghostty-zmx installs helper wrappers but does not modify your shell or Ghostty config during brew install or upgrade.
 
-      To configure the integration, run:
+      To configure (first install) or refresh (after upgrade) the integration:
 
-        ghostty-zmx-install
+        ghostty-zmx-install --yes
 
       Then restart Ghostty or open a new Ghostty window.
     EOS
