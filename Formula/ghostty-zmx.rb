@@ -34,7 +34,7 @@ class GhosttyZmx < Formula
 
       To configure (first install) or refresh (after upgrade) the integration:
 
-        ghostty-zmx-install --yes
+        ghostty-zmx install --yes
 
       To bootstrap ghostty-zmx on a remote host for zmx remote panes
       (re-run after each upgrade to push the refreshed server files):
