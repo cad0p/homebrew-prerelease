@@ -21,6 +21,11 @@ class GhosttyZmx < Formula
       #!/bin/zsh
       exec "#{libexec}/uninstall.sh" "$@"
     EOS
+
+    # Expose the ghostty-zmx CLI (projection surface + install-server subcommand)
+    # in PATH. The script resolves its runtime files via GHOSTTY_ZMX_INSTALL_DIR,
+    # so a symlink into libexec is sufficient.
+    bin.install_symlink "#{libexec}/ghostty-zmx" => "ghostty-zmx"
   end
 
   def caveats
@@ -31,6 +36,11 @@ class GhosttyZmx < Formula
 
         ghostty-zmx-install --yes
 
+      To bootstrap ghostty-zmx on a remote host for zmx remote panes
+      (re-run after each upgrade to push the refreshed server files):
+
+        ghostty-zmx install-server <host>
+
       Then restart Ghostty or open a new Ghostty window.
     EOS
   end
@@ -38,6 +48,7 @@ class GhosttyZmx < Formula
   test do
     assert_match "Usage:", shell_output("#{bin}/ghostty-zmx-install --help")
     assert_match "Usage:", shell_output("#{bin}/ghostty-zmx-uninstall --help")
+    assert_match "Modes:", shell_output("#{bin}/ghostty-zmx --help")
     assert_path_exists "#{libexec}/session-manager.zsh"
   end
 end
